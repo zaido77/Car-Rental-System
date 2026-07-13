@@ -142,3 +142,22 @@ CarRentalSystem
 ## ⭐ Project Status
 
 Completed as a full desktop application demonstrating a complete car rental management workflow, from customer registration and booking creation to vehicle return and transaction history view.
+
+---
+
+## 📄 License & Usage
+
+This project was created for educational and portfolio purposes.
+
+You are welcome to:
+- Learn from the source code.
+- Fork the repository.
+- Use it for personal and educational purposes.
+
+You may **NOT**:
+- Sell this project or any modified version of it.
+- Use this project for any commercial purpose.
+- Redistribute this project as a commercial product.
+- Claim this project as your own work.
+
+© 2026 Zaid Irshaid. All rights reserved.
