@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BEB3EE78-71D9-4741-9A22-001CD82EF914}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CarRentalPresentationLayer</RootNamespace>
+    <AssemblyName>CarRentalPresentationLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>CarRenatlSystemIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bookings\frmReturnVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bookings\frmReturnVehicle.Designer.cs">
+      <DependentUpon>frmReturnVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clsGlobal.cs" />
+    <Compile Include="Customers\frmCustomerBookingHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customers\frmCustomerBookingHistory.Designer.cs">
+      <DependentUpon>frmCustomerBookingHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuelTypes\frmFuelTypeDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FuelTypes\frmFuelTypeDetails.Designer.cs">
+      <DependentUpon>frmFuelTypeDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenances\frmAddEditMaintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenances\frmAddEditMaintenance.Designer.cs">
+      <DependentUpon>frmAddEditMaintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenances\frmMaintenanceDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenances\frmMaintenanceDetails.Designer.cs">
+      <DependentUpon>frmMaintenanceDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenances\frmManageMaintenances.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenances\frmManageMaintenances.Designer.cs">
+      <DependentUpon>frmManageMaintenances.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bookings\frmAddEditRentalBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bookings\frmAddEditRentalBooking.Designer.cs">
+      <DependentUpon>frmAddEditRentalBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bookings\frmBookingDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bookings\frmBookingDetails.Designer.cs">
+      <DependentUpon>frmBookingDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bookings\frmPickupPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bookings\frmPickupPayment.Designer.cs">
+      <DependentUpon>frmPickupPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bookings\frmManageRentalBookings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bookings\frmManageRentalBookings.Designer.cs">
+      <DependentUpon>frmManageRentalBookings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Returns\frmReturnDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Returns\frmReturnDetails.Designer.cs">
+      <DependentUpon>frmReturnDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Returns\frmViewReturns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Returns\frmViewReturns.Designer.cs">
+      <DependentUpon>frmViewReturns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\frmTransactionDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\frmTransactionDetails.Designer.cs">
+      <DependentUpon>frmTransactionDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\frmViewTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\frmViewTransactions.Designer.cs">
+      <DependentUpon>frmViewTransactions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucReturnInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucReturnInfo.Designer.cs">
+      <DependentUpon>ucReturnInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucTransactionInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucTransactionInfo.Designer.cs">
+      <DependentUpon>ucTransactionInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucBookingInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucBookingInfo.Designer.cs">
+      <DependentUpon>ucBookingInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucFilterCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucFilterCustomer.Designer.cs">
+      <DependentUpon>ucFilterCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucFilterVehicle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucFilterVehicle.Designer.cs">
+      <DependentUpon>ucFilterVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucVehicleInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucVehicleInfo.Designer.cs">
+      <DependentUpon>ucVehicleInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\clsString.cs" />
+    <Compile Include="VehicleCategories\frmAddEditVehicleCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehicleCategories\frmAddEditVehicleCategory.Designer.cs">
+      <DependentUpon>frmAddEditVehicleCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleCategories\frmManageVehicleCategories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehicleCategories\frmManageVehicleCategories.Designer.cs">
+      <DependentUpon>frmManageVehicleCategories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleCategories\frmVehicleCategoryDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehicleCategories\frmVehicleCategoryDetails.Designer.cs">
+      <DependentUpon>frmVehicleCategoryDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicles\frmAddEditVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vehicles\frmAddEditVehicle.Designer.cs">
+      <DependentUpon>frmAddEditVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicles\frmManageVehicles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vehicles\frmManageVehicles.Designer.cs">
+      <DependentUpon>frmManageVehicles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicles\frmVehicleBookingHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vehicles\frmVehicleBookingHistory.Designer.cs">
+      <DependentUpon>frmVehicleBookingHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicles\frmVehicleDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vehicles\frmVehicleDetails.Designer.cs">
+      <DependentUpon>frmVehicleDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsFormUtils\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsFormUtils\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuelTypes\frmAddEditFuelType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FuelTypes\frmAddEditFuelType.Designer.cs">
+      <DependentUpon>frmAddEditFuelType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\clsColorsSettings.cs" />
+    <Compile Include="Customers\frmCustomerDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customers\frmCustomerDetails.Designer.cs">
+      <DependentUpon>frmCustomerDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsFormUtils\FormWithTitle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsFormUtils\FormWithTitle.Designer.cs">
+      <DependentUpon>FormWithTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\frmAddEditCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customers\frmAddEditCustomer.Designer.cs">
+      <DependentUpon>frmAddEditCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainMenu.Designer.cs">
+      <DependentUpon>frmMainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\frmManageCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customers\frmManageCustomers.Designer.cs">
+      <DependentUpon>frmManageCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuelTypes\frmManageFuelTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FuelTypes\frmManageFuelTypes.Designer.cs">
+      <DependentUpon>frmManageFuelTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsFormUtils\ManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsFormUtils\ManageForm.Designer.cs">
+      <DependentUpon>ManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucCloseButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucCloseButton.Designer.cs">
+      <DependentUpon>ucCloseButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucCustomerInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucCustomerInfo.Designer.cs">
+      <DependentUpon>ucCustomerInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\clsMessageBoxUtil.cs" />
+    <Compile Include="WindowsFormUtils\ManageFormWithCRUDContextMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsFormUtils\ManageFormWithCRUDContextMenu.Designer.cs">
+      <DependentUpon>ManageFormWithCRUDContextMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsFormUtils\ViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsFormUtils\ViewForm.Designer.cs">
+      <DependentUpon>ViewForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Bookings\frmReturnVehicle.resx">
+      <DependentUpon>frmReturnVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customers\frmCustomerBookingHistory.resx">
+      <DependentUpon>frmCustomerBookingHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FuelTypes\frmFuelTypeDetails.resx">
+      <DependentUpon>frmFuelTypeDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenances\frmAddEditMaintenance.resx">
+      <DependentUpon>frmAddEditMaintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenances\frmMaintenanceDetails.resx">
+      <DependentUpon>frmMaintenanceDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenances\frmManageMaintenances.resx">
+      <DependentUpon>frmManageMaintenances.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bookings\frmAddEditRentalBooking.resx">
+      <DependentUpon>frmAddEditRentalBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bookings\frmBookingDetails.resx">
+      <DependentUpon>frmBookingDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bookings\frmPickupPayment.resx">
+      <DependentUpon>frmPickupPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bookings\frmManageRentalBookings.resx">
+      <DependentUpon>frmManageRentalBookings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Returns\frmReturnDetails.resx">
+      <DependentUpon>frmReturnDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Returns\frmViewReturns.resx">
+      <DependentUpon>frmViewReturns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\frmTransactionDetails.resx">
+      <DependentUpon>frmTransactionDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\frmViewTransactions.resx">
+      <DependentUpon>frmViewTransactions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucReturnInfo.resx">
+      <DependentUpon>ucReturnInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucTransactionInfo.resx">
+      <DependentUpon>ucTransactionInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucBookingInfo.resx">
+      <DependentUpon>ucBookingInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucFilterCustomer.resx">
+      <DependentUpon>ucFilterCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucFilterVehicle.resx">
+      <DependentUpon>ucFilterVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucVehicleInfo.resx">
+      <DependentUpon>ucVehicleInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehicleCategories\frmAddEditVehicleCategory.resx">
+      <DependentUpon>frmAddEditVehicleCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehicleCategories\frmManageVehicleCategories.resx">
+      <DependentUpon>frmManageVehicleCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehicleCategories\frmVehicleCategoryDetails.resx">
+      <DependentUpon>frmVehicleCategoryDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehicles\frmAddEditVehicle.resx">
+      <DependentUpon>frmAddEditVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehicles\frmManageVehicles.resx">
+      <DependentUpon>frmManageVehicles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehicles\frmVehicleBookingHistory.resx">
+      <DependentUpon>frmVehicleBookingHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehicles\frmVehicleDetails.resx">
+      <DependentUpon>frmVehicleDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsFormUtils\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customers\frmCustomerDetails.resx">
+      <DependentUpon>frmCustomerDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsFormUtils\FormWithTitle.resx">
+      <DependentUpon>FormWithTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customers\frmAddEditCustomer.resx">
+      <DependentUpon>frmAddEditCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainMenu.resx">
+      <DependentUpon>frmMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customers\frmManageCustomers.resx">
+      <DependentUpon>frmManageCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FuelTypes\frmAddEditFuelType.resx">
+      <DependentUpon>frmAddEditFuelType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FuelTypes\frmManageFuelTypes.resx">
+      <DependentUpon>frmManageFuelTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsFormUtils\ManageForm.resx">
+      <DependentUpon>ManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucCloseButton.resx">
+      <DependentUpon>ucCloseButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucCustomerInfo.resx">
+      <DependentUpon>ucCustomerInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsFormUtils\ManageFormWithCRUDContextMenu.resx">
+      <DependentUpon>ManageFormWithCRUDContextMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsFormUtils\ViewForm.resx">
+      <DependentUpon>ViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CarRentalBusinessLayer\CarRentalBusinessLayer.csproj">
+      <Project>{eacd894f-4232-403b-a1a8-fab95e9ec369}</Project>
+      <Name>CarRentalBusinessLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FuelTypesIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CategoriesIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ManageVehiclesIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MaintenaceIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RentalIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TransactionsIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ReturnsIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BookingsIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CustomersIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VehiclesIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Customers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddPerson.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NullCustomerImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\showDetails.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddNew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fuel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddFuel1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddCategory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Category.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vehicles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddCar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NullVehicleImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coins.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maintenance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddMaintenance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\completeMaintenance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\showVehicle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BookingsBig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddBookingCMS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddBooking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\showCustomer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\showDetails2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel-booking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PickupVehicle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BookVehicle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BookingHistory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VehicleBookingHistory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BigTransactions.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CustomerBookingHistory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BigReturns.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CarRenatlSystemIcon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

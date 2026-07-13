@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/Extras/">
+    <File Path="../../../Downloads/P4 - Car Rental (Solution).jpg" />
+  </Folder>
+  <Project Path="CarRentalBusinessLayer/CarRentalBusinessLayer.csproj" Id="eacd894f-4232-403b-a1a8-fab95e9ec369" />
+  <Project Path="CarRentalDataAccessLayer/CarRentalDataAccessLayer.csproj" Id="62409c86-2246-4e8d-a314-5d0f5e17c1b6" />
+  <Project Path="CarRentalPresentationLayer/CarRentalPresentationLayer.csproj" Id="beb3ee78-71d9-4741-9a22-001cd82ef914" />
+</Solution>
