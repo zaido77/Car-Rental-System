@@ -115,6 +115,7 @@ CarRentalSystem
 
 ## 📸 Screenshots
 
+<img width="1278" height="671" alt="image" src="https://github.com/user-attachments/assets/df955ed4-d358-4980-ac42-18afe6d4fa69" />
 <img width="551" height="607" alt="5" src="https://github.com/user-attachments/assets/22ff82e5-89b7-4513-aed8-2128edd5822d" />
 <img width="584" height="662" alt="6" src="https://github.com/user-attachments/assets/befb8a55-abed-4637-bde2-45f3261d9f3d" />
 <img width="1018" height="636" alt="7" src="https://github.com/user-attachments/assets/a55fc1a0-9461-436b-9fa2-3e00c8844003" />
@@ -125,7 +126,6 @@ CarRentalSystem
 <img width="623" height="388" alt="2" src="https://github.com/user-attachments/assets/ca81f981-d021-435d-96bd-8d2c3cfd74ec" />
 <img width="577" height="668" alt="11" src="https://github.com/user-attachments/assets/add1daa8-37b7-46ac-80f0-07d38aa3a020" />
 <img width="625" height="586" alt="12" src="https://github.com/user-attachments/assets/50ddb00c-4ce5-4f1d-92f0-806c112e388a" />
-<img width="678" height="377" alt="1" src="https://github.com/user-attachments/assets/de75a282-fdf5-473b-a47d-2c6fb95edbcc" />
 <img width="763" height="625" alt="3" src="https://github.com/user-attachments/assets/2b19baed-df3d-444f-b1d0-f5de3f8adb7f" />
 
 ---
