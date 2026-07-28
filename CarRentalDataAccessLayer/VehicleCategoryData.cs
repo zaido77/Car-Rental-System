@@ -152,7 +152,7 @@ namespace CarRentalDataAccessLayer
             return (rowsAffected > 0);
         }
 
-        public static DataView GetAllVehicleCategories()
+        public static DataTable GetAllVehicleCategories()
         {
             DataTable dataTable = new DataTable();
 
@@ -183,7 +183,7 @@ namespace CarRentalDataAccessLayer
                 connection.Close();
             }
 
-            return dataTable.DefaultView;
+            return dataTable;
         }
         
 

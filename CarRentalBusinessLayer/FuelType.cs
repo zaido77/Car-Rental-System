@@ -56,7 +56,7 @@ namespace CarRentalBusinessLayer
 
         public static DataView GetAllFuelTypes()
         {
-            return clsFuelTypeDataAccess.GetAllFuelTypes();
+            return clsFuelTypeDataAccess.GetAllFuelTypes().DefaultView;
         }
 
         public bool Save()

@@ -295,9 +295,9 @@
             this.gbPaymentSummary.Controls.Add(this.label15);
             this.gbPaymentSummary.Controls.Add(this.label13);
             this.gbPaymentSummary.Controls.Add(this.lblRemaining);
-            this.gbPaymentSummary.Location = new System.Drawing.Point(172, 110);
+            this.gbPaymentSummary.Location = new System.Drawing.Point(156, 110);
             this.gbPaymentSummary.Name = "gbPaymentSummary";
-            this.gbPaymentSummary.Size = new System.Drawing.Size(514, 397);
+            this.gbPaymentSummary.Size = new System.Drawing.Size(548, 397);
             this.gbPaymentSummary.TabIndex = 145;
             this.gbPaymentSummary.TabStop = false;
             this.gbPaymentSummary.Text = "Payment Summary";
@@ -305,20 +305,21 @@
             // lblActualTotal
             // 
             this.lblActualTotal.AutoSize = true;
-            this.lblActualTotal.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActualTotal.Location = new System.Drawing.Point(328, 114);
+            this.lblActualTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActualTotal.ForeColor = System.Drawing.Color.MediumBlue;
+            this.lblActualTotal.Location = new System.Drawing.Point(356, 114);
             this.lblActualTotal.Name = "lblActualTotal";
-            this.lblActualTotal.Size = new System.Drawing.Size(60, 28);
+            this.lblActualTotal.Size = new System.Drawing.Size(62, 28);
             this.lblActualTotal.TabIndex = 138;
             this.lblActualTotal.Text = "[????]";
             // 
             // lblActualRentalDays
             // 
             this.lblActualRentalDays.AutoSize = true;
-            this.lblActualRentalDays.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActualRentalDays.Location = new System.Drawing.Point(328, 304);
+            this.lblActualRentalDays.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActualRentalDays.Location = new System.Drawing.Point(356, 304);
             this.lblActualRentalDays.Name = "lblActualRentalDays";
-            this.lblActualRentalDays.Size = new System.Drawing.Size(60, 28);
+            this.lblActualRentalDays.Size = new System.Drawing.Size(62, 28);
             this.lblActualRentalDays.TabIndex = 144;
             this.lblActualRentalDays.Text = "[????]";
             // 
@@ -345,20 +346,22 @@
             // lblInitialPaid
             // 
             this.lblInitialPaid.AutoSize = true;
-            this.lblInitialPaid.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInitialPaid.Location = new System.Drawing.Point(328, 64);
+            this.lblInitialPaid.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInitialPaid.ForeColor = System.Drawing.Color.Green;
+            this.lblInitialPaid.Location = new System.Drawing.Point(356, 64);
             this.lblInitialPaid.Name = "lblInitialPaid";
-            this.lblInitialPaid.Size = new System.Drawing.Size(60, 28);
+            this.lblInitialPaid.Size = new System.Drawing.Size(62, 28);
             this.lblInitialPaid.TabIndex = 136;
             this.lblInitialPaid.Text = "[????]";
             // 
             // lblRefund
             // 
             this.lblRefund.AutoSize = true;
-            this.lblRefund.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRefund.Location = new System.Drawing.Point(328, 214);
+            this.lblRefund.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRefund.ForeColor = System.Drawing.Color.Gray;
+            this.lblRefund.Location = new System.Drawing.Point(356, 214);
             this.lblRefund.Name = "lblRefund";
-            this.lblRefund.Size = new System.Drawing.Size(60, 28);
+            this.lblRefund.Size = new System.Drawing.Size(62, 28);
             this.lblRefund.TabIndex = 142;
             this.lblRefund.Text = "[????]";
             // 
@@ -395,10 +398,11 @@
             // lblRemaining
             // 
             this.lblRemaining.AutoSize = true;
-            this.lblRemaining.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRemaining.Location = new System.Drawing.Point(328, 164);
+            this.lblRemaining.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRemaining.ForeColor = System.Drawing.Color.DarkOrange;
+            this.lblRemaining.Location = new System.Drawing.Point(356, 164);
             this.lblRemaining.Name = "lblRemaining";
-            this.lblRemaining.Size = new System.Drawing.Size(60, 28);
+            this.lblRemaining.Size = new System.Drawing.Size(62, 28);
             this.lblRemaining.TabIndex = 140;
             this.lblRemaining.Text = "[????]";
             // 

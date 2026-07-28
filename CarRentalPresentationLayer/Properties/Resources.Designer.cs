@@ -223,6 +223,16 @@ namespace CarRentalPresentationLayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CarRentalLogo {
+            get {
+                object obj = ResourceManager.GetObject("CarRentalLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CategoriesIcon {
             get {
                 object obj = ResourceManager.GetObject("CategoriesIcon", resourceCulture);
@@ -423,6 +433,16 @@ namespace CarRentalPresentationLayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap profile {
+            get {
+                object obj = ResourceManager.GetObject("profile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap RentalIcon {
             get {
                 object obj = ResourceManager.GetObject("RentalIcon", resourceCulture);
@@ -496,6 +516,16 @@ namespace CarRentalPresentationLayer.Properties {
         internal static System.Drawing.Bitmap showVehicle {
             get {
                 object obj = ResourceManager.GetObject("showVehicle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap signout {
+            get {
+                object obj = ResourceManager.GetObject("signout", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

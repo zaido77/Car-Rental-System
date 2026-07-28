@@ -36,7 +36,8 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>CarRenatlSystemIcon.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -179,6 +180,12 @@
     </Compile>
     <Compile Include="UserControls\ucVehicleInfo.Designer.cs">
       <DependentUpon>ucVehicleInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\frmProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmProfile.Designer.cs">
+      <DependentUpon>frmProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\clsString.cs" />
     <Compile Include="VehicleCategories\frmAddEditVehicleCategory.cs">
@@ -372,6 +379,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ucVehicleInfo.resx">
       <DependentUpon>ucVehicleInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmProfile.resx">
+      <DependentUpon>frmProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VehicleCategories\frmAddEditVehicleCategory.resx">
       <DependentUpon>frmAddEditVehicleCategory.cs</DependentUpon>
@@ -604,9 +614,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\X.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="CarRenatlSystemIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

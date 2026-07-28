@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static CarRentalBusinessLayer.clsVehicle;
 
 namespace CarRentalBusinessLayer
 {
@@ -18,7 +19,8 @@ namespace CarRentalBusinessLayer
             Active = 0,
             PickedUp = 1,
             Completed = 2,
-            Cancelled = 3
+            Cancelled = 3,
+            All = 4
         }
 
         public int ID { get; private set; }
@@ -39,6 +41,7 @@ namespace CarRentalBusinessLayer
         }
         public string InitialCheckNotes { get; set; }
         public enBookingStatus BookingStatus { get; private set; }
+        public DateTime CreatedDate { get; private set; }
 
         public clsRentalBooking()
         {
@@ -53,6 +56,7 @@ namespace CarRentalBusinessLayer
             this.RentalPricePerDay = -1;
             this.InitialCheckNotes = "";
             this.BookingStatus = enBookingStatus.Active;
+            this.CreatedDate = DateTime.Now;
 
             this.Mode = enMode.AddNew;
         }
@@ -60,7 +64,7 @@ namespace CarRentalBusinessLayer
         private clsRentalBooking(int ID, int CustomerID, int VehicleID,
             DateTime StartDate, DateTime EndDate, string PickupLocation,
             string DropoffLocation, byte InitialRentalDays, decimal RentalPricePerDay,
-            string InitialCheckNotes, enBookingStatus BookingStatus)
+            string InitialCheckNotes, enBookingStatus BookingStatus, DateTime CreatedDate)
         {
             this.ID = ID;
             this.CustomerID = CustomerID;
@@ -73,6 +77,7 @@ namespace CarRentalBusinessLayer
             this.RentalPricePerDay = RentalPricePerDay;
             this.InitialCheckNotes = InitialCheckNotes;
             this.BookingStatus = BookingStatus;
+            this.CreatedDate = CreatedDate;
 
             this.Mode = enMode.Update;
         }
@@ -81,7 +86,7 @@ namespace CarRentalBusinessLayer
         {
             this.ID = clsRentalBookingDataAccess.AddNewRentalBooking(CustomerID, VehicleID,
                 StartDate, EndDate, PickupLocation, DropoffLocation, InitialRentalDays, RentalPricePerDay,
-                InitialTotalDueAmount, InitialCheckNotes, (byte)BookingStatus);
+                InitialTotalDueAmount, InitialCheckNotes, (byte)BookingStatus, CreatedDate);
 
             return this.ID != -1;
         }
@@ -105,15 +110,16 @@ namespace CarRentalBusinessLayer
             decimal RentalPricePerDay = -1;
             string InitialCheckNotes = "";
             byte BookingStatus = (byte)enBookingStatus.Active;
+            DateTime CreatedDate = DateTime.MinValue;
 
             if (clsRentalBookingDataAccess.GetRentalBookingInfoByID(BookingID, ref CustomerID,
                 ref VehicleID, ref StartDate, ref EndDate, ref PickupLocation, ref DropoffLocation, 
                 ref InitialRentalDays, ref RentalPricePerDay, 
-                ref InitialCheckNotes, ref BookingStatus))
+                ref InitialCheckNotes, ref BookingStatus, ref CreatedDate))
 
                 return new clsRentalBooking(BookingID, CustomerID, VehicleID, StartDate, EndDate,
                     PickupLocation, DropoffLocation, InitialRentalDays, RentalPricePerDay, 
-                    InitialCheckNotes, (enBookingStatus)BookingStatus);
+                    InitialCheckNotes, (enBookingStatus)BookingStatus, CreatedDate);
 
             else
 
@@ -122,7 +128,7 @@ namespace CarRentalBusinessLayer
 
         public static DataView GetAllRentalBookings()
         {
-            return clsRentalBookingDataAccess.GetAllRentalBookings();
+            return clsRentalBookingDataAccess.GetAllRentalBookings().DefaultView;
         }
 
         public bool Save()
@@ -179,12 +185,12 @@ namespace CarRentalBusinessLayer
 
         public static DataView GetVehicleBookingsHistory(int VehicleID)
         {
-            return clsRentalBookingDataAccess.GetVehicleBookingsHistory(VehicleID);
+            return clsRentalBookingDataAccess.GetVehicleBookingsHistory(VehicleID).DefaultView;
         }
 
         public static DataView GetCustomerBookingsHistory(int CustomerID)
         {
-            return clsRentalBookingDataAccess.GetCustomerBookingsHistory(CustomerID);
+            return clsRentalBookingDataAccess.GetCustomerBookingsHistory(CustomerID).DefaultView;
         }
 
     }

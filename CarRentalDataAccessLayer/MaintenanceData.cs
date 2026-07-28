@@ -197,7 +197,7 @@ namespace CarRentalDataAccessLayer
             return (rowsAffected > 0);
         }
 
-        public static DataView GetAllMaintenances()
+        public static DataTable GetAllMaintenances()
         {
             DataTable dataTable = new DataTable();
 
@@ -228,7 +228,7 @@ namespace CarRentalDataAccessLayer
                 connection.Close();
             }
 
-            return dataTable.DefaultView;
+            return dataTable;
         }
 
     }

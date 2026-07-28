@@ -219,7 +219,7 @@ namespace CarRentalDataAccessLayer
         }
 
 
-        public static DataView GetAllRentalTransactions()
+        public static DataTable GetAllRentalTransactions()
         {
             DataTable dataTable = new DataTable();
 
@@ -250,7 +250,7 @@ namespace CarRentalDataAccessLayer
                 connection.Close();
             }
 
-            return dataTable.DefaultView;
+            return dataTable;
         }
 
     }

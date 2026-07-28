@@ -1,5 +1,8 @@
 ﻿using CarRentalDataAccessLayer;
+using System;
 using System.Data;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace CarRentalBusinessLayer
 {
@@ -10,7 +13,7 @@ namespace CarRentalBusinessLayer
 
         public int ID { get; private set; }
         public string Username { get; set; }
-        public string Password { get; set; }
+        public string Password { get; private set; }
 
         public clsUser()
         {
@@ -30,6 +33,15 @@ namespace CarRentalBusinessLayer
             this.Mode = enMode.Update;
         }
 
+        private static string _ComputeHash(string Value)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(Value));
+                return BitConverter.ToString(bytes).Replace("-", "");
+            }
+        }
+
         private bool _AddNewUser()
         {
             this.ID = clsUserDataAccess.AddNewUser(this.Username, this.Password);
@@ -42,9 +54,25 @@ namespace CarRentalBusinessLayer
             return clsUserDataAccess.UpdateUser(this.ID, this.Username, this.Password);
         }
 
+        public static clsUser Find(int UserID)
+        {
+            string Username = "";
+            string Password = "";
+
+            if (clsUserDataAccess.GetUserInfoByUserID(UserID, ref Username, ref Password))
+
+                return new clsUser(UserID, Username, Password);
+
+            else
+
+                return null;
+        }
+
         public static clsUser Find(string Username, string Password)
         {
             int UserID = -1;
+
+            Password = _ComputeHash(Password);
 
             if (clsUserDataAccess.GetUserInfoByUsernameAndPassword(Username, Password, ref UserID))
 
@@ -60,6 +88,8 @@ namespace CarRentalBusinessLayer
             switch (this.Mode)
             {
                 case enMode.AddNew:
+                    this.Password = _ComputeHash(this.Password);
+
                     if (_AddNewUser())
                     {
                         this.Mode = enMode.Update;
@@ -75,5 +105,16 @@ namespace CarRentalBusinessLayer
                     return false;
             }
         }
+
+        public void ChangePassword(string NewPlainPassword)
+        {
+            this.Password = _ComputeHash(NewPlainPassword);
+        }
+
+        public bool IsEqualPassword(string PasswordToConfirm)
+        {
+            return Password == _ComputeHash(PasswordToConfirm);
+        }
+
     }
 }

@@ -56,7 +56,7 @@ namespace CarRentalBusinessLayer
 
         public static DataView GetAllVehicleCategories()
         {
-            return clsVehicleCategoryDataAccess.GetAllVehicleCategories();
+            return clsVehicleCategoryDataAccess.GetAllVehicleCategories().DefaultView;
         }
 
         public bool Save()

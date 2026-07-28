@@ -111,7 +111,7 @@
             this.toolStripSeparator3,
             this.showDetailsToolStripMenuItem1});
             this.cmsRecord.Name = "contextMenuStrip1";
-            this.cmsRecord.Size = new System.Drawing.Size(287, 439);
+            this.cmsRecord.Size = new System.Drawing.Size(287, 406);
             this.cmsRecord.Opening += new System.ComponentModel.CancelEventHandler(this.cmsRecord_Opening);
             // 
             // showBookingDetailsToolStripMenuItem
@@ -224,6 +224,7 @@
             this.ClientSize = new System.Drawing.Size(1380, 913);
             this.Name = "frmManageRentalBookings";
             this.Text = "Manage Rental Bookings";
+            this.Load += new System.EventHandler(this.frmManageRentalBookings_Load);
             this.Controls.SetChildIndex(this.lblTitle, 0);
             this.Controls.SetChildIndex(this.pbImage, 0);
             this.Controls.SetChildIndex(this.lblNumberOfRecords, 0);

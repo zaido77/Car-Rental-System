@@ -166,6 +166,8 @@ namespace CarRentalPresentationLayer.RentalBookings
             Booking.RentalPricePerDay = ucFilterVehicle1.RentalPricePerDay;
 
             lblRentalPricePerDay.Text = clsString.PriceToString(Booking.RentalPricePerDay);
+            dtpStartDate.Value = dtpStartDate.MinDate;
+
             tabControl1.SelectTab("tabBookingInfo");
             btnSave.Enabled = true;
         }

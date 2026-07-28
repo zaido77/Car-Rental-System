@@ -208,7 +208,7 @@ namespace CarRentalDataAccessLayer
         }
 
 
-        public static DataView GetAllVehicleReturns()
+        public static DataTable GetAllVehicleReturns()
         {
             DataTable dataTable = new DataTable();
 
@@ -239,7 +239,7 @@ namespace CarRentalDataAccessLayer
                 connection.Close();
             }
 
-            return dataTable.DefaultView;
+            return dataTable;
         }
 
     }

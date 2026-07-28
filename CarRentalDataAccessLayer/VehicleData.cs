@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.Remoting.Lifetime;
 
 namespace CarRentalDataAccessLayer
@@ -319,7 +320,7 @@ namespace CarRentalDataAccessLayer
             return (rowsAffected > 0);
         }
 
-        public static DataView GetAllVehicles()
+        public static DataTable GetAllVehicles()
         {
             DataTable dataTable = new DataTable();
 
@@ -350,7 +351,7 @@ namespace CarRentalDataAccessLayer
                 connection.Close();
             }
 
-            return dataTable.DefaultView;
+            return dataTable;
         }
 
     }

@@ -127,7 +127,7 @@ namespace CarRentalBusinessLayer
 
         public static DataView GetAllVehicles()
         {
-            return clsVehicleDataAccess.GetAllVehicles();
+            return clsVehicleDataAccess.GetAllVehicles().DefaultView;
         }
 
         public bool Save()

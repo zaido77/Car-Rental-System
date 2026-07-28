@@ -102,7 +102,7 @@ namespace CarRentalBusinessLayer
 
         public static DataView GetAllVehicleReturns()
         {
-            return clsVehicleReturnDataAccess.GetAllVehicleReturns();
+            return clsVehicleReturnDataAccess.GetAllVehicleReturns().DefaultView;
         }
 
         public bool Save()

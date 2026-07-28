@@ -99,7 +99,7 @@ namespace CarRentalBusinessLayer
 
         public static DataView GetAllRentalTransactions()
         {
-            return clsRentalTransactionDataAccess.GetAllRentalTransactions();
+            return clsRentalTransactionDataAccess.GetAllRentalTransactions().DefaultView;
         }
 
         public bool Save()

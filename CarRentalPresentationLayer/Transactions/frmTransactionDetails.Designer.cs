@@ -37,7 +37,7 @@
             // 
             this.ucBookingInfo1.Location = new System.Drawing.Point(9, 427);
             this.ucBookingInfo1.Name = "ucBookingInfo1";
-            this.ucBookingInfo1.Size = new System.Drawing.Size(862, 289);
+            this.ucBookingInfo1.Size = new System.Drawing.Size(862, 382);
             this.ucBookingInfo1.TabIndex = 0;
             // 
             // ucTransactionInfo1
@@ -49,7 +49,7 @@
             // 
             // ucCloseButton1
             // 
-            this.ucCloseButton1.Location = new System.Drawing.Point(727, 727);
+            this.ucCloseButton1.Location = new System.Drawing.Point(731, 826);
             this.ucCloseButton1.Name = "ucCloseButton1";
             this.ucCloseButton1.Size = new System.Drawing.Size(144, 47);
             this.ucCloseButton1.TabIndex = 2;
@@ -58,7 +58,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(887, 786);
+            this.ClientSize = new System.Drawing.Size(887, 885);
             this.Controls.Add(this.ucCloseButton1);
             this.Controls.Add(this.ucTransactionInfo1);
             this.Controls.Add(this.ucBookingInfo1);

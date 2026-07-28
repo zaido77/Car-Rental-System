@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.gbBookingInfo = new System.Windows.Forms.GroupBox();
+            this.lblCreatedAt = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.lblVehicle = new System.Windows.Forms.Label();
             this.lblRentalPricePerDay = new System.Windows.Forms.Label();
@@ -54,6 +56,8 @@
             // 
             // gbBookingInfo
             // 
+            this.gbBookingInfo.Controls.Add(this.lblCreatedAt);
+            this.gbBookingInfo.Controls.Add(this.label11);
             this.gbBookingInfo.Controls.Add(this.label10);
             this.gbBookingInfo.Controls.Add(this.lblVehicle);
             this.gbBookingInfo.Controls.Add(this.lblRentalPricePerDay);
@@ -77,10 +81,30 @@
             this.gbBookingInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbBookingInfo.Location = new System.Drawing.Point(0, 0);
             this.gbBookingInfo.Name = "gbBookingInfo";
-            this.gbBookingInfo.Size = new System.Drawing.Size(829, 289);
+            this.gbBookingInfo.Size = new System.Drawing.Size(829, 371);
             this.gbBookingInfo.TabIndex = 119;
             this.gbBookingInfo.TabStop = false;
             this.gbBookingInfo.Text = "Booking Information";
+            // 
+            // lblCreatedAt
+            // 
+            this.lblCreatedAt.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreatedAt.Location = new System.Drawing.Point(163, 321);
+            this.lblCreatedAt.Name = "lblCreatedAt";
+            this.lblCreatedAt.Size = new System.Drawing.Size(526, 28);
+            this.lblCreatedAt.TabIndex = 140;
+            this.lblCreatedAt.Text = "[????]";
+            this.lblCreatedAt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(355, 293);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(118, 28);
+            this.label11.TabIndex = 139;
+            this.label11.Text = "Created At:";
             // 
             // label10
             // 
@@ -288,7 +312,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gbBookingInfo);
             this.Name = "ucBookingInfo";
-            this.Size = new System.Drawing.Size(829, 289);
+            this.Size = new System.Drawing.Size(829, 371);
             this.gbBookingInfo.ResumeLayout(false);
             this.gbBookingInfo.PerformLayout();
             this.ResumeLayout(false);
@@ -317,5 +341,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblCreatedAt;
     }
 }

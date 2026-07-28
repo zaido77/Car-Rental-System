@@ -9,7 +9,7 @@ namespace CarRentalDataAccessLayer
         public static bool GetRentalBookingInfoByID(int ID, ref int CustomerID, ref int VehicleID,
             ref DateTime StartDate, ref DateTime EndDate, ref string PickupLocation,
             ref string DropoffLocation, ref byte InitialRentalDays, ref decimal RentalPricePerDay,
-            ref string InitialCheckNotes, ref byte BookingStatus)
+            ref string InitialCheckNotes, ref byte BookingStatus, ref DateTime CreatedDate)
         {
             bool IsFound = false;
 
@@ -39,6 +39,7 @@ namespace CarRentalDataAccessLayer
                     InitialRentalDays = (byte)reader["InitialRentalDays"];
                     RentalPricePerDay = (decimal)reader["RentalPricePerDay"];
                     BookingStatus = (byte)reader["BookingStatus"];
+                    CreatedDate = (DateTime)reader["CreatedDate"];
 
                     if (reader["InitialCheckNotes"] != DBNull.Value)
                         InitialCheckNotes = (string)reader["InitialCheckNotes"];
@@ -68,7 +69,7 @@ namespace CarRentalDataAccessLayer
         public static int AddNewRentalBooking(int CustomerID, int VehicleID,
             DateTime StartDate, DateTime EndDate, string PickupLocation,
             string DropoffLocation, byte InitialRentalDays, decimal RentalPricePerDay,
-            decimal InitialTotalDueAmount, string InitialCheckNotes, byte BookingStatus)
+            decimal InitialTotalDueAmount, string InitialCheckNotes, byte BookingStatus, DateTime CreatedDate)
         {
             int RentalBookingID = -1;
 
@@ -85,7 +86,8 @@ namespace CarRentalDataAccessLayer
                      RentalPricePerDay,
                      InitialTotalDueAmount,
                      InitialCheckNotes,
-                     BookingStatus)
+                     BookingStatus,
+                     CreatedDate)
                  VALUES
                      (@CustomerID,
                      @VehicleID,
@@ -97,7 +99,8 @@ namespace CarRentalDataAccessLayer
                      @RentalPricePerDay,
                      @InitialTotalDueAmount,
                      @InitialCheckNotes,
-                     @BookingStatus);
+                     @BookingStatus,
+                     @CreatedDate);
 
                  SELECT CAST(SCOPE_IDENTITY() AS INT);";
 
@@ -113,6 +116,7 @@ namespace CarRentalDataAccessLayer
             command.Parameters.AddWithValue("@RentalPricePerDay", RentalPricePerDay);
             command.Parameters.AddWithValue("@InitialTotalDueAmount", InitialTotalDueAmount);
             command.Parameters.AddWithValue("@BookingStatus", BookingStatus);
+            command.Parameters.AddWithValue("@CreatedDate", CreatedDate);
             
             if (!string.IsNullOrEmpty(InitialCheckNotes))
                 command.Parameters.AddWithValue("@InitialCheckNotes", InitialCheckNotes);
@@ -231,7 +235,7 @@ namespace CarRentalDataAccessLayer
             return (rowsAffected > 0);
         }
 
-        public static DataView GetAllRentalBookings()
+        public static DataTable GetAllRentalBookings()
         {
             DataTable dataTable = new DataTable();
 
@@ -262,7 +266,7 @@ namespace CarRentalDataAccessLayer
                 connection.Close();
             }
 
-            return dataTable.DefaultView;
+            return dataTable;
         }
 
         public static bool SetBookingStatus(int BookingID, byte BookingStatus)
@@ -297,7 +301,7 @@ namespace CarRentalDataAccessLayer
             return (rowsAffected > 0);
         }
 
-        public static DataView GetVehicleBookingsHistory(int VehicleID)
+        public static DataTable GetVehicleBookingsHistory(int VehicleID)
         {
             DataTable dataTable = new DataTable();
 
@@ -329,10 +333,10 @@ namespace CarRentalDataAccessLayer
                 connection.Close();
             }
 
-            return dataTable.DefaultView;
+            return dataTable;
         }
 
-        public static DataView GetCustomerBookingsHistory(int CustomerID)
+        public static DataTable GetCustomerBookingsHistory(int CustomerID)
         {
             DataTable dataTable = new DataTable();
 
@@ -364,7 +368,72 @@ namespace CarRentalDataAccessLayer
                 connection.Close();
             }
 
-            return dataTable.DefaultView;
+            return dataTable;
+        }
+
+        public static int GetAllBookingsCount()
+        {
+            int Count = 0;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = "SELECT COUNT(*) AS BookingsCount FROM RentalBookings";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            try
+            {
+                connection.Open();
+
+                object result = command.ExecuteScalar();
+
+                if (result != null)
+                    Count = (int)result;
+
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return Count;
+        }
+
+        public static int GetBookingsCount(byte BookingStatus)
+        {
+            int Count = 0;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = @"SELECT COUNT(*) AS BookingsCount FROM RentalBookings
+                             WHERE BookingStatus = @BookingStatus";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@BookingStatus", BookingStatus);
+
+            try
+            {
+                connection.Open();
+
+                object result = command.ExecuteScalar();
+
+                if (result != null)
+                    Count = (int)result;
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return Count;
         }
 
     }

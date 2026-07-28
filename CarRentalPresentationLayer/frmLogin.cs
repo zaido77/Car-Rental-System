@@ -33,6 +33,10 @@ namespace CarRentalPresentationLayer
 
                 if (clsGlobal.CurrentUser != null)
                 {
+                    txtUsername.Clear();
+                    txtPassword.Clear();
+                    txtUsername.Focus();
+
                     Form frm = new frmMainMenu();
                     frm.ShowDialog();
                 }

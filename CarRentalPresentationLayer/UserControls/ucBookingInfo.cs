@@ -53,6 +53,7 @@ namespace CarRentalPresentationLayer.UserControls
             lblRentalDays.Text = Booking.InitialRentalDays.ToString() + " Days";
             lblEndDate.Text = Booking.EndDate.ToShortDateString();
             lblTotalDue.Text = Booking.InitialTotalDueAmount.ToString("F2") + " AED";
+            lblCreatedAt.Text = Booking.CreatedDate.ToString();
 
             return true;
         }

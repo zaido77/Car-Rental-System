@@ -18,9 +18,27 @@ namespace CarRentalPresentationLayer.RentalBookings
 {
     public partial class frmManageRentalBookings : ManageForm
     {
+        int _BookingIDToSelect;
+
         public frmManageRentalBookings()
         {
             InitializeComponent();
+
+            _PrepareForm();
+        }
+
+        public frmManageRentalBookings(int BookingIDToSelect)
+        {
+            InitializeComponent();
+
+            _PrepareForm();
+
+            _BookingIDToSelect = BookingIDToSelect;
+        }
+
+        void _PrepareForm()
+        {
+            Title = "Manage Bookings";
 
             DataView dvAllBookingsList = clsRentalBooking.GetAllRentalBookings();
 
@@ -31,10 +49,9 @@ namespace CarRentalPresentationLayer.RentalBookings
                 dgvAllRecords.Columns["CustomerID"].Visible = false;
                 dgvAllRecords.Columns["VehicleID"].Visible = false;
                 dgvAllRecords.Columns["BookingStatus"].Visible = false;
+                dgvAllRecords.Columns["CreatedDate"].Visible = false;
                 dgvAllRecords.ContextMenuStrip = cmsRecord;
             }
-
-            Title = "Manage Bookings";
         }
 
         int _GetSelectedBookingID()
@@ -188,6 +205,27 @@ namespace CarRentalPresentationLayer.RentalBookings
             Form frm = new frmReturnVehicle((int)GetSelectedColumn("TransactionID"));
             frm.ShowDialog();
             _RefreshRentalBookingsList();
+        }
+
+        private void frmManageRentalBookings_Load(object sender, EventArgs e)
+        {
+            if (_BookingIDToSelect == -1)
+                return;
+
+            foreach (DataGridViewRow Row in dgvAllRecords.Rows)
+            {
+                if ((int)Row.Cells["BookingID"].Value == _BookingIDToSelect)
+                {
+                    dgvAllRecords.ClearSelection();
+                    Row.Selected = true;
+
+                    dgvAllRecords.CurrentCell = Row.Cells["BookingID"];
+                    
+                    dgvAllRecords.FirstDisplayedScrollingRowIndex = Row.Index;
+
+                    break;
+                }
+            }
         }
     }
 }

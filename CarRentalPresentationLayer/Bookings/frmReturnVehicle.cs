@@ -36,7 +36,7 @@ namespace CarRentalPresentationLayer.Bookings
             // ==== nudCurrentMileage ====
             nudCurrentMileage.Minimum = Return.Mileage;
             nudCurrentMileage.Maximum = 1000000;
-            nudCurrentMileage.Increment = 1000;
+            nudCurrentMileage.Increment = 200;
             nudCurrentMileage.ThousandsSeparator = true;
 
             // ==== lblActualReturnDate ====

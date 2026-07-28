@@ -77,7 +77,7 @@ namespace CarRentalBusinessLayer
 
         public static DataView GetAllMaintenances()
         {
-            return clsMaintenanceDataAccess.GetAllMaintenances();
+            return clsMaintenanceDataAccess.GetAllMaintenances().DefaultView;
         }
 
         public bool Save()
